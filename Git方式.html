@@ -1,0 +1,97 @@
+<!DOCTYPE html><html><head><title>W3day01 Git</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+
+
+<h1 id="w3day01-git">W3day01 Git</h1>
+
+<blockquote>
+  <h3 id="配置用户信息">配置用户信息</h3>
+</blockquote>
+
+<p>git config –global user.name “Leon199254” <br>
+git config –global user.email “981059792@qq.com” <br>
+git config –list 查看配置是否成功</p>
+
+<blockquote>
+  <h3 id="linux-命令">linux 命令</h3>
+</blockquote>
+
+<table><tbody><tr style="font-weight:bold">  <td align="center">命令</td>  <td>说明</td></tr><tr>  <td align="center">ls</td>  <td>当前目录下有哪些文件</td></tr><tr>  <td align="center">cd x</td>  <td>进入x文件夹</td></tr><tr>  <td align="center">cd ..</td>  <td>回到上级目录</td></tr><tr>  <td align="center">mkdir x</td>  <td>创建文件夹</td></tr><tr>  <td align="center">touch x.txt</td>  <td>创建文件</td></tr><tr>  <td align="center">cat x.txt</td>  <td>查看文件</td></tr><tr>  <td align="center">vi x.txt</td>  <td>编辑文件</td></tr><tr>  <td align="center">i</td>  <td>进入可编辑状态</td></tr><tr>  <td align="center">esc</td>  <td>退出编辑状态</td></tr><tr>  <td align="center">:q!</td>  <td>强制退出</td></tr><tr>  <td align="center">:wq</td>  <td>保存退出</td></tr><tr>  <td align="center">rm -rf x</td>  <td>删除文件</td></tr></tbody></table>
+
+<blockquote>
+  <h3 id="创建本地的git仓库">创建本地的git仓库</h3>
+</blockquote>
+
+<p><mark>进入需要操作的文件夹打开git命令窗口</mark></p>
+
+<table><tbody><tr style="font-weight:bold">  <td align="center">命令</td>  <td>说明</td></tr><tr>  <td align="center">git init</td>  <td>初始化本地git库</td></tr><tr>  <td align="center">git status</td>  <td>查看提交的状态</td></tr><tr>  <td align="center">git add .</td>  <td>提交到暂存区</td></tr><tr>  <td align="center">git commit -m “备注信息”</td>  <td>提交到历史区</td></tr></tbody></table>
+
+<blockquote>
+  <h3 id="本地仓库内容提交到远程仓库">本地仓库内容提交到远程仓库</h3>
+</blockquote>
+
+<p>远程仓库地址 ：<a href="https://github.com/Leon199254/201804JS.git" target="_blank">https://github.com/Leon199254/201804JS.git</a></p>
+
+<p>① 关联本地仓库和远程仓库 <br>
+git remote add leon(远程仓库名) <a href="https://github.com/Leon199254/201804JS.git" target="_blank">https://github.com/Leon199254/201804JS.git</a> <br>
+git remote -v 查看关联的远程仓库 <br>
+git remote rm leon  删除关联的远程仓库</p>
+
+<p>② 推送本地仓库内容到远程仓库 <br>
+ git push origin master  推送到远程仓库的主分支</p>
+
+<blockquote>
+  <h3 id="复习整个过程">复习整个过程</h3>
+  
+  <p>git config credential.helper ”  清除配置的用户信息 <br>
+  git config –global user.name “Leon199254” <br>
+  git config –global user.email “981059792@qq.com”</p>
+</blockquote>
+
+<ol><li rel="1">进入文件夹 打开git命令窗口 -&gt; git  init   初始化本地git仓库</li>
+<li rel="2">git add . 提交到暂存区</li>
+<li rel="3">git commit -m “备注提交的信息” 提交到历史区</li>
+<li rel="4">git status 查看提交状态</li>
+<li rel="3">去github新建仓库  点+号-&gt;new respository-&gt;create respository <br>
+会生成一个远程仓库地址  <a href="https://github.com/Leon199254/201804JS.git" target="_blank">https://github.com/Leon199254/201804JS.git</a></li>
+<li rel="4">进入本地仓库文件夹  关联本地仓库和远程仓库 <br>
+git remote add origin <a href="https://github.com/Leon199254/201804JS.git" target="_blank">https://github.com/Leon199254/201804JS.git</a> <br>
+git remote -v 查看关联的远程仓库是哪个</li>
+<li rel="5">git push origin master  把本地仓库内容推送到远程仓库 <br>
+    - 以后推的时候先拉取一下，养成好的习惯</li>
+<li rel="6">若遇到远程仓库和本地仓库不一样时 <br>
+<strong>先需要把远程仓库内容拉取下</strong> <br>
+git pull origin master –allow-unrelated-histories 强制先合并远程仓库和本地仓库的内容。</li>
+</ol>
+
+
+
+<h3 id="另一种提交本地项目的方式常用">另一种提交本地项目的方式（常用）</h3>
+
+<p>git clone <a href="https://github.com/pengiff/2018JS.git" target="_blank">https://github.com/pengiff/2018JS.git</a> <br>
+相当于做了三件事 <br>
+    - 1.建了一个本地git仓库，仓库名和远程仓库名一样 <br>
+    - 2.本地仓库和远程仓库关联起来了 <br>
+    - 3.远程仓库的内容已经拉取到本地仓库 <br>
+git add . <br>
+git commit -m”“” <br>
+git push origin master</p>
+
+<blockquote>
+  <p>远程仓库内容和本地仓库内容不一样时，需要两个仓库保持同步后，才能往远程仓库推送内容，同步的做法就是git pull origin master 把远程仓库内容先拉取到本地仓库</p>
+</blockquote>
+
+<p>获取老师课件 <br>
+第一次时git clone  <a href="https://github.com/zfpx/201804JS.git" target="_blank">https://github.com/zfpx/201804JS.git</a> <br>
+从第二次开始，每次进去到201804JS文件夹里，git pull origin master</p>
+
+
+
+<h2 id="组长把作业交给老师仓库">组长把作业交给老师仓库</h2>
+
+<ul><li>1.用你的用户名和密码登录github</li>
+<li>2.<a href="https://github.com/zfpx/201804JS" target="_blank">https://github.com/zfpx/201804JS</a>(别人的仓库)复制到地址栏按回车</li>
+<li>3.点击fork，201804JS仓库就会克隆到你的github上面</li>
+</ul></div></body></html>
